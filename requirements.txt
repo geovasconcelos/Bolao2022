@@ -1,5 +1,4 @@
 numpy==1.20.2
-pandas @ file:///C:/ci/pandas_1592833613419/work
 pandas-datareader @ file:///tmp/build/80754af9/pandas-datareader_1595379313840/work
 pandas-profiling==2.10.0
 statsmodels==0.11.1
