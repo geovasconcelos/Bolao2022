@@ -7,7 +7,7 @@ import yfinance as yf
 
 
 # loading data
-caminho = r'C:\Users\georgev\OneDrive - chesf.gov.br\DCAI\Bolão Copa'
+caminho = r'https://github.com/geovasconcelos/Bolao2022/blob/main/'
 Participantes = ['George', 'Adriano', 'Andrea', 'Eduardo', 'Germano', 'Priscilla', 'Rubiane', 'Aurea',
                  'Denise', 'Girlayne', 'Silvia', 'Laurindo', 'Marcus', 'Adalberto', 'Albenice', 'Claudio', 'Flavio']
 Datas = ['20_nov', '21_nov', '22_nov', '23_nov', '24_nov', '25_nov', '26_nov', '27_nov', '28_nov', '29_nov', '30_nov',
