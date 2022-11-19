@@ -40,7 +40,7 @@ st.markdown(
 
 def Pontuacao():
     st.header('Tabela de Pontuação')
-#    st.table(df.style.highlight_max(axis=0))
+    st.table(df)
 
 def Palpites():
     st.header('Palpites apresentados')
