@@ -12,7 +12,7 @@ df.drop(['Pagto', 'Unnamed: 3', 'Unnamed: 4', 'Resultado', 'Ordem', 'Unnamed: 7'
         inplace=True)
 df.columns = ["Participantes", "Pontos"]
 df.dropna(axis=0, inplace=True)
-#df['Pontos'] = int(df.Pontos)
+#df['Pontos'] = int(df.Pontos) 
 df.set_index('Participantes', inplace=True)
 df.sort_values(by=['Pontos','Participantes'], ascending=True, inplace=True)
 #####################################################################################
