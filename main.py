@@ -17,7 +17,7 @@ df.set_index('Participantes', inplace=True)
 df.sort_values(by=['Pontos','Participantes'], ascending=True, inplace=True)
 #####################################################################################
 
-tab = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', sheet_name='Placar')
+tab = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Placar')
 tab.drop(['Grupo', 'Local','Unnamed: 24',
        'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13',
        'Unnamed: 14', 'Unnamed: 15', 'Unnamed: 16', 'Unnamed: 17',
