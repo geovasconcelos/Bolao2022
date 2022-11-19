@@ -2,11 +2,12 @@ import pandas as pd
 import streamlit as st
 import datetime
 import numpy as np
+import openpyxl
 
 
 # loading data
 
-df = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', sheet_name='Regras')
+df = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Regras')
 df.drop(['Pagto', 'Unnamed: 3', 'Unnamed: 4', 'Resultado', 'Ordem', 'Unnamed: 7', '1ª Fase', 'Unnamed: 9'], axis=1,
         inplace=True)
 df.columns = ["Participantes", "Pontos"]
@@ -16,7 +17,7 @@ df.set_index('Participantes', inplace=True)
 df.sort_values(by=['Pontos','Participantes'], ascending=True, inplace=True)
 #####################################################################################
 
-tab = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', sheet_name='Placar')
+tab = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Placar')
 tab.drop(['Grupo', 'Local','Unnamed: 24',
        'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13',
        'Unnamed: 14', 'Unnamed: 15', 'Unnamed: 16', 'Unnamed: 17',
@@ -28,7 +29,7 @@ tab['Dia'] = pd.to_datetime(tab['Dia'], format="%d/%m/%Y")
 
 ##########################################################################################
 
-palpites = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', sheet_name='Palpites')
+palpites = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Palpites')
 palpites.sort_values(by=['Dia', 'Jogo', 'Palpiteiro'], ascending=True, inplace=True)
 
 #Aplicação
