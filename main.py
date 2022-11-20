@@ -14,7 +14,7 @@ df.columns = ["Participantes", "Pontos"]
 df.dropna(axis=0, inplace=True)
 #df['Pontos'] = int(df.Pontos) 
 df.set_index('Participantes', inplace=True)
-df.sort_values(by=['Pontos','Participantes'], ascending=True, inplace=True)
+df.sort_values(by=['Pontos','Participantes'], ascending=False, inplace=True)
 #####################################################################################
 
 tab = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Placar')
