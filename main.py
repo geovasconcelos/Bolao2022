@@ -4,7 +4,6 @@ import datetime
 import numpy as np
 import openpyxl
 
-
 # loading data
 
 df = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Regras')
