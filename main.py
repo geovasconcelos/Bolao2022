@@ -57,7 +57,7 @@ if st.checkbox("Mostrar Tabela de jogos"):
 
 #st.sidebar.header("Opções")
 
-page = st.selectbox('Selecione', ['Pontuação', 'Palpites'])
+page = st.selectbox('Selecione o que você deseja visualizar', ['Pontuação', 'Palpites'])
 if page == 'Pontuação':
         Pontuacao()
 else:
