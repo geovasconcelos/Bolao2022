@@ -32,7 +32,8 @@ palpites.sort_values(by=['Dia', 'Jogo', 'Palpiteiro'], ascending=True, inplace=T
 
 #Aplicação
 
-#st.image('https://github.com/geovasconcelos/Bolao2022/blob/main/logo_qatar.png', use_column_width=True)
+image = 'https://github.com/geovasconcelos/Bolao2022/blob/main/logo_qatar.png'
+st.image(image, use_column_width=True)
 
 st.title('Bolão da Copa 2022')
 
