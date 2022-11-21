@@ -54,7 +54,7 @@ def Palpites():
 if st.checkbox("Mostrar Tabela de jogos"):
     st.table(tab)
 
-st.sidebar.header("Opções")
+#st.sidebar.header("Opções")
 
 page = st.selectbox('Selecione', ['Pontuação', 'Palpites'])
 if page == 'Pontuação':
