@@ -24,7 +24,7 @@ df.sort_values(by=['Pontos','Participantes'], ascending=False, inplace=True)
 def Placares():
         return pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Placar')
 
-tab = Placares():
+tab = Placares()
 tab.drop(['Grupo', 'Local','Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15',
           'Unnamed: 16', 'Unnamed: 17', 'Unnamed: 18', 'Unnamed: 19', 'Unnamed: 20', 'Unnamed: 21', 'Unnamed: 22',
           'Unnamed: 23','Unnamed: 24'], axis=1, inplace=True)
