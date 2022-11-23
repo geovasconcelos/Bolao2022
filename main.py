@@ -36,7 +36,6 @@ def Placares():
 tab2 = Placares()
 ##########################################################################################
 
-@st.cache
 def Pitacos():
         return pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Palpites')
 palpites = Pitacos()
