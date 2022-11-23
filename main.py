@@ -6,11 +6,7 @@ import openpyxl
 
 # loading data
 
-@st.cache
-def Pontos():
-        return pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Regras')        
-
-df = Pontos()
+df = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Regras')        
 df.drop(['Pagto', 'Unnamed: 3', 'Unnamed: 4', 'Resultado', 'Ordem', 'Unnamed: 7', '1ª Fase', 'Unnamed: 9'], axis=1,
         inplace=True)
 df.columns = ["Participantes", "Pontos"]
@@ -18,13 +14,14 @@ df.dropna(axis=0, inplace=True)
 #df['Pontos'] = int(df.Pontos) 
 df.set_index('Participantes', inplace=True)
 df.sort_values(by=['Pontos','Participantes'], ascending=False, inplace=True)
-#####################################################################################
 
 @st.cache
-def Placares():
-        return pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Placar')
+def Pontuacao():
+        return df
+df2 = Pontuacao()
+#####################################################################################
 
-tab = Placares()
+tab = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='Placar')
 tab.drop(['Grupo', 'Local','Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15',
           'Unnamed: 16', 'Unnamed: 17', 'Unnamed: 18', 'Unnamed: 19', 'Unnamed: 20', 'Unnamed: 21', 'Unnamed: 22',
           'Unnamed: 23','Unnamed: 24'], axis=1, inplace=True)
@@ -32,6 +29,11 @@ tab.columns=['Jogo', "Dia","Hora", "Equipe1", "Gol1", "X", "Gol2", "Equipe2"]
 tab.dropna(subset=['Equipe2'], inplace=True)
 tab['Dia'] = pd.to_datetime(tab['Dia'], format="%d/%m/%Y")
 tab['Dia'] = tab.Dia.dt.strftime('%d/%m/%Y')
+
+@st.cache
+def Placares():
+        return tab
+tab2 = Placares()
 ##########################################################################################
 
 @st.cache
@@ -55,7 +57,7 @@ st.markdown(
 
 def Pontuacao():
     st.header('Tabela de Pontuação')
-    st.table(df)
+    st.table(df2)
 
 def Palpites():
     st.header('Palpites apresentados')
@@ -63,7 +65,7 @@ def Palpites():
 
 # Sidebar
 if st.checkbox("Mostrar Tabela de jogos"):
-    st.table(tab)
+    st.table(tab2)
 
 #st.sidebar.header("Opções")
 
