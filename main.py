@@ -28,7 +28,7 @@ tab.drop(['Grupo', 'Local','Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed
 tab.columns=['Jogo', "Dia","Hora", "Equipe1", "Gol1", "X", "Gol2", "Equipe2"]
 tab.dropna(subset=['Jogo'], inplace=True)
 #tab['Dia'] = pd.to_datetime(tab['Dia'], format="%d/%m/%Y")
-tab['Dia'] = tab.Dia.dt.strftime('%d/%m/%Y')
+#tab['Dia'] = tab.Dia.dt.strftime('%d/%m/%Y')
 
 @st.cache
 def Placares():
