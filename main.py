@@ -82,6 +82,6 @@ else:
         Palpites()
 
 #st.table(stats)
-
+st.header('Quantidade de placares exatos certos por participante')
 fig = px.bar(stats, x='Participante', y='Acertos')
 st.plotly_chart(fig)
