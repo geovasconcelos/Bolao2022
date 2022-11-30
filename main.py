@@ -43,10 +43,8 @@ palpites = Pitacos()
 palpites.sort_values(by=['Dia', 'Jogo', 'Palpiteiro'], ascending=True, inplace=True)
 ###########################################################################################
 stats = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='stats')        
-#df.columns = ["Participantes", "Placares_certos"]
-#stats["Placares_certos"] = int(stats.Placares_certos) 
-#stats.set_index('Participantes', inplace=True)
-#stats.sort_values(by=["Placares_certos"], ascending=False, inplace=True)
+stats.set_index('Participante', inplace=True)
+stats.sort_values(by=["Acertos"], ascending=False, inplace=True)
 
 ################################################################################################
 
