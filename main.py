@@ -81,5 +81,7 @@ if page == 'Pontuação':
 else:
         Palpites()
 
-st.table(stats)
-#st.plotly_chart(stats)
+#st.table(stats)
+
+fig = px.bar(stats, x='Participante', y='Acertos')
+st.plotly_chart(fig)
