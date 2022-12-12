@@ -47,6 +47,10 @@ stats = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Cop
 stats.sort_values(by=["Acertos"], ascending=False, inplace=True)
 
 ################################################################################################
+champ = pd.read_excel('https://github.com/geovasconcelos/Bolao2022/blob/main/Copa2022.xlsm?raw=true', engine="openpyxl", sheet_name='campeao')        
+champ.set_index('Participantes', inplace=True)
+
+################################################################################################
 
 #Aplicação
 
@@ -85,3 +89,6 @@ else:
 st.header('Quantidade de acertos de placares exatos por participante')
 fig = px.bar(stats, x='Participante', y='Acertos')
 st.plotly_chart(fig)
+
+st.header('Palpites dos Campeões')
+st.table(champ)
